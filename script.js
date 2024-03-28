@@ -1,6 +1,3 @@
-// https://api.openweathermap.org/data/2.5/weather?q=Agartala&appid=41ca8090034a5aecfefc882bc32782f2&units=metric
-//
-//
 const apiKey = "41ca8090034a5aecfefc882bc32782f2";
 const apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
@@ -15,7 +12,6 @@ async function checkWeather(city) {
     document.querySelector(".weather").style.display = "none";
   } else {
     let data = await response.json();
-    //   console.log(data);
     document.querySelector(".temp").innerHTML =
       Math.round(data.main.temp) + "°c";
     document.querySelector(".city").innerHTML = data.name;
@@ -38,8 +34,7 @@ async function checkWeather(city) {
 }
 
 searchBtn.addEventListener("click", () => {
-  //   console.log("is clicked");
   checkWeather(searchBox.value);
 });
 
-// checkWeather();
+
